@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:11:24 by agaspar           #+#    #+#             */
-/*   Updated: 2015/11/28 18:31:45 by agaspar          ###   ########.fr       */
+/*   Updated: 2015/12/11 15:46:15 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char		*ft_itoa(int n)
 
 	i = 0;
 	tmp = ft_strnew(ft_charlen(n));
+	if (tmp == NULL)
+		return (NULL);
 	j = n;
 	if (n < 0)
 		j = -n;
