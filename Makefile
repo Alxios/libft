@@ -1,6 +1,6 @@
 NAME = libft.a
 
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror -I ./includes/
 
 SRCS = ft_memset.c \
 		   ft_bzero.c \
