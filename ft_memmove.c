@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:07:16 by agaspar           #+#    #+#             */
-/*   Updated: 2015/11/28 15:13:05 by agaspar          ###   ########.fr       */
+/*   Updated: 2015/12/14 13:42:50 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*res;
 
-	if (dst == '\0' || src == '\0')
-		return (NULL);
 	res = (unsigned char*)malloc(sizeof(char *) * n);
 	if (res)
 	{
