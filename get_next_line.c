@@ -6,12 +6,11 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 12:46:51 by agaspar           #+#    #+#             */
-/*   Updated: 2015/12/28 13:59:34 by agaspar          ###   ########.fr       */
+/*   Updated: 2015/12/28 14:11:41 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <get_next_line.h>
 #include <stdlib.h>
 
 static int	read_line(int const fd, char **data)

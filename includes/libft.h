@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2015/12/28 14:03:30 by agaspar          ###   ########.fr       */
+/*   Updated: 2015/12/28 14:11:32 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <get_next_line.h>
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
