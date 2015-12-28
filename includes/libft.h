@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2015/12/01 12:51:14 by agaspar          ###   ########.fr       */
+/*   Updated: 2015/12/28 14:03:30 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,7 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstadd(t_list **alst, t_list *new);
+
+int				get_next_line(int const fd, char **line);
 
 #endif
