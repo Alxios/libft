@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/01/19 16:26:42 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/01/25 14:54:49 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char			**ft_range(char **map, size_t n);
 char			*ft_strtoupper(char *s);
 char			*ft_strtolower(char *s);
 int				ft_tablen(char **map);
+int				ft_nbrlen(int nbr);
 
 typedef	struct	s_list
 {
