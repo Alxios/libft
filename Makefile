@@ -67,6 +67,7 @@ SRCS = ft_memset.c \
 		   ft_tablen.c \
 		   ft_putnbr_ndl.c \
 		   ft_nbrlen.c \
+		   ft_putstr_col.c \
 		   get_next_line.c
 
 OBJS = $(SRCS:.c=.o)
