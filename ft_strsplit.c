@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:10:47 by agaspar           #+#    #+#             */
-/*   Updated: 2016/02/01 16:26:43 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/01 16:33:20 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static void		ft_init_words(char const *s, char c, char **map)
 		if (*s != '\0')
 			s++;
 	}
-	map[i] = ft_strnew(1);
 	map[i] = NULL;
 }
 
@@ -62,7 +61,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (s == NULL || c == 0)
 		return (NULL);
-	map = (char **)malloc(sizeof(char **) * ft_count_words(s, c) + 1);
+	map = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
 	if (map)
 		ft_init_words(s, c, map);
 	return (map);
