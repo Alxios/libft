@@ -6,22 +6,12 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:10:47 by agaspar           #+#    #+#             */
-/*   Updated: 2015/11/30 12:33:18 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/01 16:26:43 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-static int		ft_strlen_c(char const *s, char c)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (*s != c && *s++ != '\0')
-		i++;
-	return (i);
-}
 
 static void		ft_init_words(char const *s, char c, char **map)
 {
