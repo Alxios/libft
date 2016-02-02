@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 12:46:51 by agaspar           #+#    #+#             */
-/*   Updated: 2015/12/28 14:11:41 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/02 16:13:06 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,19 @@ static int	get_next_line_lst(int const fd, char **line, char **data)
 		ret = read_line(fd, data);
 		if (ret < 0)
 			return (-1);
-		if (ret == 0)
-		{
-			if ((save = ft_strchr(*data, '\0')) == *data)
-				return (0);
-		}
-		else
+		if (ret != 0)
 			save = ft_strchr(*data, '\n');
+		else if ((save = ft_strchr(*data, '\0')) == *data)
+			return (0);
 	}
 	*line = ft_strsub(*data, 0, ft_strlen(*data) - ft_strlen(save));
-	*data = ft_strdup(save + 1);
+	if (ft_strcmp(save, "\n") != 0)
+		*data = ft_strdup(save + 1);
+	else
+	{
+		ft_strdel(data);
+		*data = NULL;
+	}
 	return (1);
 }
 
