@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:10:47 by agaspar           #+#    #+#             */
-/*   Updated: 2016/02/11 15:21:11 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/11 15:59:09 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (s == NULL || c == 0)
 		return (NULL);
-	if((map = malloc(sizeof(char *) * (ft_count_words(s, c) + 1))) == NULL)
+	if ((map = malloc(sizeof(char *) * (ft_count_words(s, c) + 1))) == NULL)
 		return (NULL);
 	ft_init_words(s, c, map);
 	return (map);
