@@ -1,6 +1,6 @@
 NAME = libft.a
 
-FLAG = -Wall -Wextra -Werror -Iincludes/
+FLAG = -Wall -Wextra -Werror -g -Iincludes/
 
 SRCS = ft_memset.c \
 		   ft_bzero.c \
@@ -69,7 +69,8 @@ SRCS = ft_memset.c \
 		   ft_nbrlen.c \
 		   ft_putstr_col.c \
 		   ft_strlen_c.c \
-		   get_next_line.c
+		   get_next_line.c \
+		   ft_isspace.c
 
 OBJS = $(SRCS:.c=.o)
 

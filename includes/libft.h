@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/02/01 16:29:40 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/11 15:27:15 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void			ft_strtolower(char *s);
 int				ft_tablen(char **map);
 size_t			ft_nbrlen(int nbr);
 size_t			ft_strlen_c(char const *str, char c);
+int				ft_isspace(int c);
 
 void			ft_putstr_col(const char *s, unsigned int color);
 

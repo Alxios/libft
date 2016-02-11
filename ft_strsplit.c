@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:10:47 by agaspar           #+#    #+#             */
-/*   Updated: 2016/02/01 16:33:20 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/11 15:21:11 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,16 @@
 static void		ft_init_words(char const *s, char c, char **map)
 {
 	int		i;
-	int		j;
+	size_t	size;
 
 	i = 0;
 	while (*s != '\0')
 	{
 		if (*s != c)
 		{
-			j = 0;
-			map[i] = ft_strnew(ft_strlen_c(s, c));
-			if (map[i])
-				while (*s != c && *s != '\0')
-					map[i][j++] = *s++;
-			i++;
+			size = ft_strlen_c(s, c);
+			map[i++] = ft_strsub(s, 0, size);
+			s += size;
 		}
 		if (*s != '\0')
 			s++;
@@ -61,8 +58,8 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (s == NULL || c == 0)
 		return (NULL);
-	map = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
-	if (map)
-		ft_init_words(s, c, map);
+	if((map = malloc(sizeof(char *) * (ft_count_words(s, c) + 1))) == NULL)
+		return (NULL);
+	ft_init_words(s, c, map);
 	return (map);
 }

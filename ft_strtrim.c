@@ -6,16 +6,11 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 18:10:11 by agaspar           #+#    #+#             */
-/*   Updated: 2015/11/27 13:53:50 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/02/11 15:29:30 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	return ((9 <= c && c <= 13) || c == 32);
-}
 
 char		*ft_strtrim(char const *s)
 {
