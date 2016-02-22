@@ -82,7 +82,8 @@ size_t			ft_nbrlen(int nbr);
 size_t			ft_strlen_c(char const *str, char c);
 int				ft_isspace(int c);
 
-void			ft_putstr_col(const char *s, unsigned int color);
+void			ft_putcol(const char *s, unsigned int color);
+void			ft_putcol_fd(const char *s, unsigned int color, int fd);
 
 typedef	struct	s_list
 {

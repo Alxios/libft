@@ -67,7 +67,8 @@ SRCS = ft_memset.c \
 		   ft_tablen.c \
 		   ft_putnbr_ndl.c \
 		   ft_nbrlen.c \
-		   ft_putstr_col.c \
+		   ft_putcol.c \
+		   ft_putcol_fd.c \
 		   ft_strlen_c.c \
 		   get_next_line.c \
 		   ft_isspace.c

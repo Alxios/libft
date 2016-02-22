@@ -13,11 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr_col(char const *s, unsigned int color)
+void	ft_putcol(char const *s, unsigned int color)
 {
-	ft_putstr_fd("\033[38;5;", 1);
-	ft_putnbr_fd(color, 1);
-	ft_putstr_fd("m", 1);
-	ft_putstr_fd(s, 1);
-	ft_putstr_fd("\033[0m", 1);
+	ft_putcol_fd(s, color, 1);
 }
