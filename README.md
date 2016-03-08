@@ -1,2 +1,2 @@
 # libft
-Empty
+not Empty
