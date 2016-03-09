@@ -84,6 +84,7 @@ int				ft_isspace(int c);
 
 void			ft_putcol(const char *s, unsigned int color);
 void			ft_putcol_fd(const char *s, unsigned int color, int fd);
+void  			ft_putnstr(char const *s, int const len);
 
 typedef	struct	s_list
 {

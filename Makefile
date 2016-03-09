@@ -71,7 +71,8 @@ SRCS = ft_memset.c \
 		   ft_putcol_fd.c \
 		   ft_strlen_c.c \
 		   get_next_line.c \
-		   ft_isspace.c
+		   ft_isspace.c \
+		   ft_putnstr.c
 
 OBJS = $(SRCS:.c=.o)
 
