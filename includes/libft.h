@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <get_next_line.h>
 
+# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
+# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
+
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
@@ -85,6 +88,8 @@ int				ft_isspace(int c);
 void			ft_putcol(const char *s, unsigned int color);
 void			ft_putcol_fd(const char *s, unsigned int color, int fd);
 void  			ft_putnstr(char const *s, int const len);
+void    		ft_putwchar_fd(wchar_t c, int fd);
+void    		ft_putwchar(wchar_t c);
 
 typedef	struct	s_list
 {
