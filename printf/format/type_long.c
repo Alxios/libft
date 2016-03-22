@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   type_long.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 18:04:12 by agaspar          ###   ########.fr       */
+/*   Created: 2016/03/17 13:51:25 by agaspar           #+#    #+#             */
+/*   Updated: 2016/03/17 13:51:39 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <ft_printf.h>
 
-# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
-# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
-
-# include <sys/types.h>
-# include <limits.h>
-
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_ctype.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_misc.h"
-
-#endif
+size_t	type_long(va_list *args, t_printf *ptrf)
+{
+	ptrf->len = l;
+	if (ptrf->type == 'D')
+		return (type_int(args, ptrf));
+	return (type_unsigned(args, ptrf));
+}

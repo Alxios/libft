@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 18:04:12 by agaspar          ###   ########.fr       */
+/*   Created: 2016/03/17 13:46:46 by agaspar           #+#    #+#             */
+/*   Updated: 2016/03/17 13:47:16 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
-# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
-
-# include <sys/types.h>
-# include <limits.h>
-
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_ctype.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_misc.h"
-
-#endif
+int		ft_wcharlen(wchar_t c)
+{
+	if (c <= 0x7F)
+		return (1);
+	else if (c <= 0x7FF)
+		return (2);
+	else if (c <= 0xFFFF)
+		return (3);
+	else if (c <= 0x10FFFF)
+		return (4);
+	return (-1);
+}

@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 18:04:12 by agaspar          ###   ########.fr       */
+/*   Created: 2015/11/25 10:25:23 by agaspar           #+#    #+#             */
+/*   Updated: 2015/11/27 11:35:34 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
-# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
-
-# include <sys/types.h>
-# include <limits.h>
-
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_ctype.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_misc.h"
-
-#endif
+char	*ft_strcat(char *dest, const char *src)
+{
+	ft_strcpy(&dest[ft_strlen(dest)], src);
+	return (dest);
+}

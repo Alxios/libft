@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 18:04:12 by agaspar          ###   ########.fr       */
+/*   Created: 2015/11/25 14:58:52 by agaspar           #+#    #+#             */
+/*   Updated: 2015/11/25 17:35:21 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <stdlib.h>
 
-# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
-# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	const char	*temp_str;
+	const char	*temp_tf;
 
-# include <sys/types.h>
-# include <limits.h>
-
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_ctype.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_misc.h"
-
-#endif
+	temp_tf = s2;
+	if (*s2 == '\0')
+		return (char *)s1;
+	while (*s1 != '\0')
+	{
+		if (*s1 == *s2)
+		{
+			temp_str = s1;
+			while (*temp_str++ == *temp_tf++)
+			{
+				if (*temp_tf == '\0')
+					return (char *)s1;
+			}
+			temp_tf = (char *)s2;
+		}
+		s1++;
+	}
+	return (NULL);
+}

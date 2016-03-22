@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:39 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 18:04:12 by agaspar          ###   ########.fr       */
+/*   Created: 2015/11/26 12:29:27 by agaspar           #+#    #+#             */
+/*   Updated: 2016/03/22 16:22:47 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_mem.h"
 
-# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
-# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t len)
+{
+	size_t	i;
 
-# include <sys/types.h>
-# include <limits.h>
-
-# include "ft_io.h"
-# include "ft_string.h"
-# include "ft_mem.h"
-# include "ft_ctype.h"
-# include "ft_math.h"
-# include "ft_list.h"
-# include "ft_misc.h"
-
-#endif
+	i = 0;
+	if (len == 0)
+		return (NULL);
+	while (i < len)
+	{
+		*((char *)dst + i) = *((char *)src + i);
+		if (*((char *)src + i) == (char)c)
+		{
+			return ((char *)dst + i + 1);
+		}
+		i++;
+	}
+	return (NULL);
+}
