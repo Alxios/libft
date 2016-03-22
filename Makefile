@@ -4,7 +4,7 @@ NAME = libft.a
 #_- Compiler -_#
 #==============#
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 RM = rm -rf
 
 #====================#
@@ -65,23 +65,27 @@ IO = $(addprefix io/,ft_putchar.c ft_putchar_fd.c ft_putchar_while.c \
 	 ft_putstr.c ft_putstr_fd.c ft_putnstr.c ft_putendl.c ft_putendl_fd.c \
 	 ft_putcol.c ft_putcol_fd.c ft_putwchar.c ft_putwchar_fd.c ft_putwstr.c \
 	 ft_putwstr_fd.c ft_putnwstr.c ft_putnwstr_fd.c ft_putnbr.c ft_putnbr_fd.c \
-	 ft_putnbr_ndl.c)
+	 ft_putnbr_ndl.c ft_putnstr_fd.c get_next_line.c \
+	 $(addprefix printf/,ft_printf.c parse_format.c format/type_char.c \
+	 	format/type_str.c format/type_int.c utils/length_cast.c \
+		format/type_unsigned.c put_result.c format/type_pointer.c \
+		utils/syntax_numeric.c format/type_wstr.c format/type_long.c))
 
-SRC_NAME = $(MEM) $(CTYPE) $(IO)
+LIST = $(addprefix list/,ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
+		ft_lstmap.c ft_lstnew.c)
 
-#= ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
+MISC = $(addprefix misc/,ft_itoa.c ft_atoi.c ft_nbrlen.c ft_nbrlenbase.c \
+		ft_range.c ft_tablen.c ft_ultoabase.c ft_wcharlen.c ft_wstrlen.c)
+
+STRING = $(addprefix string/,ft_strdup.c ft_strcpy.c ft_strncpy.c \
 	ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
-	ft_strstr.c ft_strnstr.c ft_strcmp/.c ft_strncmp.c ft_strrev.c ft_atoi.c \
-	ft_strnew.c \
+	ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_strrev.c \
 	ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c \
 	ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
-	ft_strtrim.c ft_strsplit.c ft_itoa.c ft_putchar.c ft_putstr.c \
-	ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
-	ft_lstiter.c ft_lstmap.c ft_strtoupper.c ft_strtolower.c ft_range.c \
-	ft_tablen.c ft_putnbr_ndl.c ft_nbrlen.c ft_putcol.c ft_putcol_fd.c \
-	ft_strlen_c.c get_next_line.c ft_putnstr.c
+	ft_strtrim.c ft_strsplit.c ft_strtoupper.c ft_strtolower.c \
+	ft_strnew.c ft_strlen.c ft_strlen_c.c)
 
+SRC_NAME = $(MEM) $(CTYPE) $(IO) $(LIST) $(MISC) $(STRING)
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

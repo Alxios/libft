@@ -68,7 +68,7 @@ static int		print_result(const char *format, va_list *args, size_t length)
 		ft_putstr(format);
 		return (length + ft_strlen(format));
 	}
-	bzero(&ptrf, sizeof(ptrf));
+	ft_bzero(&ptrf, sizeof(ptrf));
 	if (next > format)
 	{
 		ptrf.sub_text = ft_strsub(format, 0, next - format);

@@ -19,6 +19,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *meule_de_foin, const char *aiguille);
@@ -26,6 +27,7 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len);
 int		ft_strcmp (const char *s1, const char *s2);
 int		ft_strncmp (const char *s1, const char *s2, size_t n);
 char	*ft_strnew(size_t size);
+int		ft_strlen_c(char const *s, char c);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 int		ft_strequ(char const *s1, char const *s2);
@@ -40,5 +42,6 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 void	ft_strtoupper(char *s);
 void	ft_strtolower(char *s);
+void	ft_strrev(char *s);
 
 #endif

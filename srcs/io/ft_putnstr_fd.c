@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnstr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 14:00:40 by agaspar           #+#    #+#             */
-/*   Updated: 2015/11/26 17:19:48 by agaspar          ###   ########.fr       */
+/*   Created: 2016/03/10 15:00:22 by agaspar           #+#    #+#             */
+/*   Updated: 2016/03/22 17:33:35 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_io.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnstr_fd(char const *str, int const length, int fd)
 {
-	while (*s != (char)c && *s)
-		s++;
-	if (*s == (char)c)
-		return ((char *)s);
-	return (NULL);
+	write(length, str, fd);
 }
