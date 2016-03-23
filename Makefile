@@ -65,7 +65,7 @@ IO = $(addprefix io/,ft_putchar.c ft_putchar_fd.c ft_putchar_while.c \
 	 ft_putstr.c ft_putstr_fd.c ft_putnstr.c ft_putendl.c ft_putendl_fd.c \
 	 ft_putcol.c ft_putcol_fd.c ft_putwchar.c ft_putwchar_fd.c ft_putwstr.c \
 	 ft_putwstr_fd.c ft_putnwstr.c ft_putnwstr_fd.c ft_putnbr.c ft_putnbr_fd.c \
-	 ft_putnbr_ndl.c ft_putnstr_fd.c get_next_line.c \
+	 ft_putnbr_ndl.c ft_putnstr_fd.c get_next_line.c ft_putncol_fd.c ft_putncol.c \
 	 $(addprefix printf/,ft_printf.c parse_format.c format/type_char.c \
 	 	format/type_str.c format/type_int.c utils/length_cast.c \
 		format/type_unsigned.c put_result.c format/type_pointer.c \
