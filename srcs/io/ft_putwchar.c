@@ -6,13 +6,13 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 17:34:07 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/22 17:59:59 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/03/23 13:36:56 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_io.h"
 
-void    ft_putwchar(wchar_t c)
+void	ft_putwchar(wchar_t c)
 {
-    ft_putwchar_fd(c, 1);
+	ft_putwchar_fd(c, 1);
 }
