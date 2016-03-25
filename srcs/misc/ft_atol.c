@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_misc.h                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/22 18:06:03 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/25 15:26:35 by agaspar          ###   ########.fr       */
+/*   Created: 2016/03/25 15:23:56 by agaspar           #+#    #+#             */
+/*   Updated: 2016/03/25 15:26:11 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MISC_H
-# define FT_MISC_H
+#include <libft.h>
 
-int			ft_atoi(const char *nptr);
-long int	ft_atol(const char *str);
-char		*ft_itoa(int n);
-char		*ft_ultoabase(unsigned long nbr, size_t base);
+long int	ft_atol(const char *str)
+{
+	long	nb;
+	int		sign;
 
-char		**ft_range(char **map, size_t n);
-int			ft_tablen(char **map);
-
-size_t		ft_nbrlen(int nbr);
-size_t		ft_nbrlen_base(long n, int const base);
-
-int			ft_wcharlen(wchar_t c);
-int			ft_wstrlen(wchar_t *str);
-
-#endif
+	nb = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+')
+		str++;
+	else
+	{
+		if (*str == '-')
+		{
+			sign = -1;
+			str++;
+		}
+	}
+	while (*str != '\0' && ft_isdigit(*str))
+		nb = nb * 10 + (*str++ - '0');
+	return (nb * sign);
+}

@@ -75,7 +75,8 @@ LIST = $(addprefix list/,ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
 		ft_lstmap.c ft_lstnew.c)
 
 MISC = $(addprefix misc/,ft_itoa.c ft_atoi.c ft_nbrlen.c ft_nbrlenbase.c \
-		ft_range.c ft_tablen.c ft_ultoabase.c ft_wcharlen.c ft_wstrlen.c)
+		ft_range.c ft_tablen.c ft_ultoabase.c ft_wcharlen.c ft_wstrlen.c \
+		ft_atol.c)
 
 STRING = $(addprefix string/,ft_strdup.c ft_strcpy.c ft_strncpy.c \
 	ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
