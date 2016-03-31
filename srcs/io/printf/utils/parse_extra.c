@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/31 14:06:50 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/31 15:48:29 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/03/31 16:40:43 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ static char	*extra(const char **str)
 	while (ft_seekstr(str, ";") && out != NULL)
 	{
 		tmp = out;
-		out = ft_strjoin(out, tmp2 = set_style(str));
+		tmp2 = set_style(str);
+		out = ft_strjoin(out, tmp2);
 		ft_strdel(&tmp);
 		ft_strdel(&tmp2);
 	}
