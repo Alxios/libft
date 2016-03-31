@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 16:08:42 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/23 14:24:34 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/03/31 15:33:20 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	ft_putncol_fd(const char *s, const int length, unsigned int color
 void	ft_putwchar_fd(wchar_t c, int fd);
 void	ft_putwstr_fd(wchar_t *str, int fd);
 void	ft_putnwstr_fd(wchar_t *str, int length, int fd);
+
+void	ft_putenfr_fd(char const *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
 

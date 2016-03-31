@@ -6,7 +6,7 @@
 /*   By: agaspar <agaspar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/10 16:40:15 by agaspar           #+#    #+#             */
-/*   Updated: 2016/03/30 19:12:36 by agaspar          ###   ########.fr       */
+/*   Updated: 2016/03/31 13:52:39 by agaspar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int				ft_printf(const char *format, ...)
 	ret = 0;
 	va_start(args, format);
 	ret = print_result(format, &args, 0);
-	ft_putstr("\e[0m");
+	ft_putstr(EOC);
 	va_end(args);
 	return (ret);
 }
