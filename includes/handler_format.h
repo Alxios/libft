@@ -58,6 +58,7 @@ size_t			type_wstr(va_list *args, t_printf *ptrf);
 size_t			type_long(va_list *args, t_printf *ptrf);
 
 void			put_prev(const int length, t_printf *ptrf, char *prefix);
+void			parse_extra(const char *str);
 
 char			*syntax_numeric(intmax_t nbr, int base, t_printf *ptrf);
 intmax_t		length_cast(intmax_t nbr, t_printf *ptrf);

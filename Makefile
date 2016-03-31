@@ -4,7 +4,7 @@ NAME = libft.a
 #_- Compiler -_#
 #==============#
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 RM = rm -rf
 
 #====================#
@@ -84,7 +84,7 @@ STRING = $(addprefix string/,ft_strdup.c ft_strcpy.c ft_strncpy.c \
 	ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c \
 	ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
 	ft_strtrim.c ft_strsplit.c ft_strtoupper.c ft_strtolower.c \
-	ft_strnew.c ft_strlen.c ft_strlen_c.c)
+	ft_strnew.c ft_strlen.c ft_strlen_c.c ft_seekstr.c)
 
 SRC_NAME = $(MEM) $(CTYPE) $(IO) $(LIST) $(MISC) $(STRING)
 

@@ -2,7 +2,14 @@
 
 int		main(void)
 {
-	ft_printf("coucou {green}test:{red}%d\n\n", 5);
-	ft_printf("coucou {red test:%d\n\n", 5);
+	ft_printf("\
+			{red} red\n\
+			{light_green} green\n\
+			{yellow} yellow\n\
+			{light_blue} blue\n\
+			{magenta} magenta\n\
+			{cyan} cyan\n\
+			{black;u;r} black\n\
+			{eoc}{light_red} grey\n");
 	return (0);
 }

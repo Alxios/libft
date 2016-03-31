@@ -65,7 +65,7 @@ static int		print_result(const char *format, va_list *args, size_t length)
 	next = ft_strchr(format, '%');
 	if (next == NULL)
 	{
-		ft_putstr(format);
+		parse_extra(format);
 		return (length + ft_strlen(format));
 	}
 	ft_bzero(&ptrf, sizeof(ptrf));

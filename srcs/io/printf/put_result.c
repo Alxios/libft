@@ -12,45 +12,94 @@
 
 #include <ft_printf.h>
 
-void	set_color(char **str)
+char	*set_color_light(const char **str)
 {
-	if (ft_strstr(*str, "{red}") == *str)
-		ft_putstr("\e[91m");
-	else if (ft_strstr(*str, "{green}") == *str)
-		ft_putstr("\e[32m");
-	else if (ft_strstr(*str, "{eoc}") == *str)
-		ft_putstr("\e[0m");
-	else
-	{
-		ft_putchar(*(*str)++);
-		return ;
-	}
-	*str = ft_strchr(*str, '}');
-	(*str)++;
+	if (ft_seekstr(str, "white"))
+		return (ft_strdup(WHITE));
+	else if (ft_seekstr(str, "default"))
+		return (ft_strdup(DEFAULT));
+	else if (ft_seekstr(str, "eoc"))
+		return (ft_strdup(EOC));
+	else if (ft_seekstr(str, "light_grey"))
+		return (ft_strdup(LIGHT_GREY));
+	return (NULL);
 }
 
-void	parse_color(char *str)
+char	*set_style(const char **str)
 {
-	if (*str == '\0')
-		return ;
+	if (ft_seekstr(str, "b"))
+		return ft_strdup(BOLD);
+	else if (ft_seekstr(str, "d"))
+		return ft_strdup(DIM);
+	else if (ft_seekstr(str, "u"))
+		return ft_strdup(UNDERLINED);
+	else if (ft_seekstr(str, "r"))
+		return ft_strdup(REVERSE);
+	else if (ft_seekstr(str, "h"))
+		return ft_strdup(HIDDEN);
+	return (NULL);
+}
+
+char	*set_color(const char **str)
+{
+	int		i;
+	char	*out;
+	char	*color[10];
+
+	i = 0;
+	out = ft_strdup("\e[##m");
+	ft_seekstr(str, "light_") ?
+		(out[2] = '9') : (out[2] = '3');
+	color[0] = "black";
+	color[1] = "red";
+	color[2] = "green";
+	color[3] = "yellow";
+	color[4] = "blue";
+	color[5] = "magenta";
+	color[6] = "cyan";
+	color[7] = "grey";
+	while (i < 8)
+		if (ft_seekstr(str, color[i++]))
+		{
+			out[3] = i + '0' - 1;
+			return (out);
+		}
+	ft_strdel(&out);
+	return (set_color_light(str));
+}
+
+void	parse_extra(const char *str)
+{
+	char	*tmp;
+	char	*out;
+
 	while (*str)
 	{
 		if (*str == '{')
 		{
-			set_color(&str);
-			continue;
+			tmp = (char *)str;
+			str++;
+			out = set_color(&str);
+			while (ft_seekstr(&str, ";"))
+				out = ft_strjoin(set_style(&str), out);
+			if (ft_seekstr(&str, "}") && out != NULL)
+			{
+				ft_putstr(out);
+				ft_strdel(&out);
+				continue;
+			}
+			ft_strdel(&out);
+			str = tmp;
 		}
 		ft_putchar(*str++);
 	}
-	parse_color(str);
 }
 
 void	put_prev(const int length, t_printf *ptrf, char *prefix)
 {
 	if (ptrf->sub_text)
 	{
-		//ft_putstr(ptrf->sub_text);
-		parse_color(ptrf->sub_text);
+		parse_extra(ptrf->sub_text);
 		ft_strdel(&ptrf->sub_text);
 	}
 	if (ptrf->pf_flag & FLAG_ZERO)
