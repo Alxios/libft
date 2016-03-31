@@ -4,7 +4,7 @@ NAME = libft.a
 #_- Compiler -_#
 #==============#
 CC = gcc
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 #====================#
